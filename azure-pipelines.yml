@@ -24,7 +24,6 @@ steps:
 - task: ServiceNow-DevOps-Server-Change-Acceleration@1
   inputs:
     connectedServiceName: 'DevOps Connection'
-    UpstreamJob: 'Test'
     changeRequestDetails: |
       “setCloseCode”: true, 
             “attributes”: {
