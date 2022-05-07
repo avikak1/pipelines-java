@@ -24,10 +24,13 @@ steps:
 - task: ServiceNow-DevOps-Server-Change-Acceleration@1
   inputs:
     connectedServiceName: 'DevOps Connection'
+    UpstreamJob: 'Test'
     changeRequestDetails: |
+    {
       “setCloseCode”: true, 
-            “attributes”: {
-              “sys_created_by”: “abc”,
-              “priority”: ”2”,
-              “comments”: “test”
-            }
+      “attributes”: {
+        “sys_created_by”: “abc”,
+        “priority”: ”2”,
+        “comments”: “test”
+      }
+    }
