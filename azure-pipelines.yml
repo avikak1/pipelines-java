@@ -25,7 +25,7 @@ steps:
   inputs:
     connectedServiceName: 'DevOps Connection'
     UpstreamJob: 'Test'
-    changeRequestDetails: |
+    changeRequestDetails: 
     {
       “setCloseCode”: true, 
       “attributes”: {
