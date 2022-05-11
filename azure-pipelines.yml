@@ -6,13 +6,14 @@
 trigger:
 - master
 
-pool: server
+pool: 
+ vmImage: ubuntu-latest
 
 steps:
 - task: ServiceNow-DevOps-Server-Change-Acceleration@1
   inputs:
     connectedServiceName: 'DevOps Connection'
-    UpstreamJob: 'Test'
+    UpstreamJob: 'UATTest'
     changeRequestDetails: |
       “setCloseCode”: true, 
       “attributes”: {
