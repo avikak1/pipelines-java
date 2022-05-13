@@ -17,7 +17,7 @@ steps:
     connectedServiceName: 'DevOps Connection'
     artifactRegistrationPayload: |
       {
-            “Artifacts”: [
+            “artifacts”: [
             {
                 “name”: “globes.war”,
                 “repositoryName”: “”,
@@ -25,3 +25,4 @@ steps:
                 “semanticVersion”: “1.$(Build.BuildId).0”
              }]}
     artifactToolIdExists: true
+
