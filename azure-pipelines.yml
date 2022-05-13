@@ -16,10 +16,12 @@ steps:
   inputs:
     connectedServiceName: 'DevOps Connection'
     artifactRegistrationPayload: |
-      - task: DownloadBuildArtifacts@0
-            inputs:
-              buildType: 'current'
-              downloadType: 'single'
-              artifactName: 'corpsite'
-              downloadPath: '$(System.ArtifactsDirectory)'
-    artifactToolIdExists: true    
+      {
+            “Artifacts”: [
+            {
+                “name”: “globes.war”,
+                “repositoryName”: “”,
+                “version”:  “1.$(Build.BuildId)”,
+                “semanticVersion”: “1.$(Build.BuildId).0”
+             }]}
+    artifactToolIdExists: true
