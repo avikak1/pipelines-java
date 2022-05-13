@@ -12,3 +12,14 @@ steps:
   inputs:
     connectedServiceName: 'DevOps Connection'
     UpstreamJob: 'Job'
+- task: ServiceNow-DevOps-Server-Artifact-Registration@1
+  inputs:
+    connectedServiceName: 'DevOps Connection'
+    artifactRegistrationPayload: |
+      - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'corpsite'
+              downloadPath: '$(System.ArtifactsDirectory)'
+    artifactToolIdExists: true    
