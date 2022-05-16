@@ -25,4 +25,8 @@ steps:
                 “semanticVersion”: “1.$(Build.BuildId).0”
              }]}
     artifactToolIdExists: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop   
 
