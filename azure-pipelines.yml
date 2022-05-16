@@ -25,4 +25,9 @@ steps:
                 “semanticVersion”: “1.$(Build.BuildId).0”
              }]}
     artifactToolIdExists: true 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'TestArtifact'
+    publishLocation: 'pipeline'
 
