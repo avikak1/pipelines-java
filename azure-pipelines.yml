@@ -12,22 +12,3 @@ steps:
   inputs:
     connectedServiceName: 'DevOps Connection'
     UpstreamJob: 'Job'
-- task: ServiceNow-DevOps-Server-Artifact-Registration@1
-  inputs:
-    connectedServiceName: 'DevOps Connection'
-    artifactRegistrationPayload: |
-      {
-            “artifacts”: [
-            {
-                “name”: “globes.war”,
-                “repositoryName”: “”,
-                “version”:  “1.$(Build.BuildId)”,
-                “semanticVersion”: “1.$(Build.BuildId).0”
-             }]}
-    artifactToolIdExists: true 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'TestArtifact'
-    publishLocation: 'pipeline'
-
