@@ -12,6 +12,8 @@ stages:
   - stage: 'Build'
     jobs:
     - job: 'Build'
+      steps:
+        - task: Maven@3
   
   - stage: 'Test'
     jobs:
@@ -20,6 +22,10 @@ stages:
   - stage: 'UAT'
     jobs:
     - job: 'UAT'
+      pool: server
+      steps:
+        - 
+
   
   - stage: 'Prod'
     jobs:
