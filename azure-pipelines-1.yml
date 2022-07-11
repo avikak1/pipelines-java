@@ -28,14 +28,6 @@ stages:
         inputs:
           connectedServiceName: 'DevOps Connection'
           UpstreamJob: 'Test'
-          changeRequestDetails: |
-            {
-                "attributes": {
-                  "short_description": "test",
-                  "start_date": "2022-08-05 08:00:00",
-                  "end_date": "2022-08-08 08:00:00"
-                }
-              }
         condition: true
 
   
