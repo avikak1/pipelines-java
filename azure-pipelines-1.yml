@@ -24,7 +24,9 @@ stages:
     - job: 'UAT'
       pool: server
       steps:
-        - 
+      - task: ServiceNow-DevOps-Server-Change-Acceleration@1
+        inputs:
+         connectedServiceName: 'DevOps Connection'
 
   
   - stage: 'Prod'
