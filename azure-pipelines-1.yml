@@ -6,14 +6,24 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+name: $(BuildDefinitionName).$(BuildID
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+  - stage: 'Build'
+    jobs:
+    - job: 'Build'
+  
+  - stage: 'Test'
+    jobs:
+    - job: 'Test'
+  
+  - stage: 'UAT'
+    jobs:
+    - job: 'UAT'
+  
+  - stage: 'Prod'
+    jobs:
+    - job: 'approval'
+      pool: server
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    - job: 'deploy'
