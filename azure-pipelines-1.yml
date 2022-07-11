@@ -28,7 +28,12 @@ stages:
         inputs:
           connectedServiceName: 'DevOps Connection'
           UpstreamJob: 'Test'
-        condition: true
+          changeRequestDetails: |
+            {
+                "attributes": {
+                  "category": "DevOps",
+                }
+              }
 
   
   - stage: 'Prod'
