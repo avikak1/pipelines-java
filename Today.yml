@@ -11,7 +11,7 @@
 trigger:
 - master
 
-name: $(BuildDefinitionName).$(BuildID
+name: $(BuildDefinitionName).$(BuildID)
 
 stages:
   - stage: 'Build'
